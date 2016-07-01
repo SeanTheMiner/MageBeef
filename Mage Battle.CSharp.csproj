@@ -70,6 +70,7 @@
     <Compile Include="Assets\_Scripts\DestroyByTime.cs" />
     <Compile Include="Assets\_Scripts\Mages\RedMage.cs" />
     <Compile Include="Assets\_Scripts\PlayerMovementController.cs" />
+    <Compile Include="Assets\_Scripts\SpellController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
