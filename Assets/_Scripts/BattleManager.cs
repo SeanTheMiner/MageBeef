@@ -49,12 +49,12 @@ public class BattleManager : MonoBehaviour {
             abilityToApply = player.abilityOne;
         }
 
-        else if ((Input.GetMouseButtonDown(1)) && (IsAbilityUsable(player, player.abilityOne))) {
+        else if ((Input.GetMouseButtonDown(1)) && (IsAbilityUsable(player, player.abilityTwo))) {
             abilityToApply = player.abilityTwo;
         }
 
-        else if ((Input.GetKeyDown(KeyCode.LeftShift)) && (IsAbilityUsable(player, player.abilityOne))) {
-            abilityToApply = player.abilityTwo;
+        else if ((Input.GetKeyDown(KeyCode.LeftShift)) && (IsAbilityUsable(player, player.abilityThree))) {
+            abilityToApply = player.abilityThree;
         }
 
         if (abilityToApply != null) {

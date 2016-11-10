@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\Abilities\FireBall.cs" />
+    <Compile Include="Assets\_Scripts\Abilities\FireBlink.cs" />
     <Compile Include="Assets\_Scripts\Abilities\FireRing.cs" />
     <Compile Include="Assets\_Scripts\BaseClasses\Ability.cs" />
     <Compile Include="Assets\_Scripts\BaseClasses\Mage.cs" />

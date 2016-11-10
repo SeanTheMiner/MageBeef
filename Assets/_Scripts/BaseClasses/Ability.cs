@@ -23,7 +23,8 @@ namespace Abilities {
         public enum AbilityType {
             Centered,
             Projectile,
-            OnClick
+            OnClick,
+            Mobility
         }
 
 
@@ -54,6 +55,10 @@ namespace Abilities {
         }
 
         public float spellSpeed {
+            get; set;
+        }
+
+        public float mobilityDistance {
             get; set;
         }
 
@@ -137,6 +142,31 @@ namespace Abilities {
 
         } //End CreateAbilityObject(2)
 
+
+        public void ActivateBlink(Transform playerLocation) {
+
+            GetMouseVector(playerLocation);
+
+            Vector3 playerPosition = new Vector3(abilityOwner.transform.position.x, 0, abilityOwner.transform.position.z);
+
+            abilityOwner.transform.position = playerPosition + (GetMouseVector(playerLocation) * mobilityDistance);
+                
+
+        } // End ActivateBlink(1)
+
+
+        public Vector3 GetMouseVector(Transform playerLocation) {
+
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.y = 0;
+
+            Vector3 playerPosition = new Vector3(abilityOwner.transform.position.x, 0, abilityOwner.transform.position.z);
+
+            Vector3 direction = (mousePosition - abilityOwner.transform.position).normalized;
+
+            return direction;
+
+        } // End GetMouseVector (1)
 
 
 

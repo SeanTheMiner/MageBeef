@@ -20,7 +20,7 @@ public class RedMage : Mage {
 
         abilityOne = new FireBall();
         abilityTwo = new FireRing();
-        abilityThree = new FireRing();
+        abilityThree = new FireBlink();
 
     } //End Constructor()
     
