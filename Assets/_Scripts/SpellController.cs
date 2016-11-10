@@ -8,46 +8,73 @@ namespace SpellControllers {
 
     public class SpellController : MonoBehaviour {
 
-        public bool staticSize, staticPosition, staticVelocity, staticDamage,
-            fizzlesOnCollision;
+        //public bool staticSize, staticPosition, staticVelocity, staticDamage, fizzlesOnCollision;
 
-        public float spellElapsedTime, spellDuration,
-            endSizeScale, endVelocityScale;
+        public string spellObjectName;
+
+        public Mage abilityOwner;
+
+        public float spellElapsedTime, spellDuration;
+        //endSizeScale, endVelocityScale;
+
+        public Rigidbody rb;
+
+
         
+
+
         public SpellController() {
 
+
+            /*
             staticSize = true;
             staticPosition = true;
             staticVelocity = true;
             staticDamage = true;
 
             fizzlesOnCollision = true;
+            */
+
 
         } //End Constructor()
 
 
         void Start() {
 
-            Rigidbody rb = GetComponent<Rigidbody>();
+            /*
 
-            if (!staticSize) {
-                StartCoroutine(LerpSizeScale());
-            }
+           rb = GetComponent<Rigidbody>();
 
-            if (!staticVelocity) {
+           mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+           playerPosition = new Vector2(abilityOwner.transform.position.x, abilityOwner.transform.position.z);
 
-            }
+           direction = playerPosition - mousePosition;
 
+
+
+
+
+       if (!staticSize) {
+           StartCoroutine(LerpSizeScale());
+       }
+
+       if (!staticVelocity) {
+
+       }
+
+       */
 
         }
+
 
         // Update is called once per frame
-        void Update() {
+        void FixedUpdate() {
 
+            //rb.AddForce(direction);  
             
-
-
         }
+
+        /*
 
 
         IEnumerator LerpSizeScale() {
@@ -74,6 +101,8 @@ namespace SpellControllers {
             }
 
         } //End LerpSizeScale()
+
+    */
 
 
 

@@ -18,7 +18,7 @@ public class RedMage : Mage {
 
         moveSpeed = 10;
 
-        abilityOne = new FireRing();
+        abilityOne = new FireBall();
         abilityTwo = new FireRing();
         abilityThree = new FireRing();
 

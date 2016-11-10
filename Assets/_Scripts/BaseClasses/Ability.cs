@@ -2,6 +2,7 @@
 using System.Collections;
 
 using Mages;
+using SpellControllers;
 
 namespace Abilities {
 
@@ -52,6 +53,9 @@ namespace Abilities {
             get; set;
         }
 
+        public float spellSpeed {
+            get; set;
+        }
 
 
         //Constructor
@@ -112,7 +116,30 @@ namespace Abilities {
             
         } //End CreateAbilityObject(2)
 
-        
+
+        public void CreateProjectileAbilityObject(Transform playerLocation) {
+
+            string prefabLocation = "AbilityObjects/" + abilityObjectName;
+            GameObject abilityObject = (GameObject)MonoBehaviour.Instantiate(Resources.Load(prefabLocation),
+                playerLocation.position,
+                Quaternion.Euler(0, 0, 0)
+                );
+
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
+            Vector3 playerPosition = new Vector3(abilityOwner.transform.position.x, 0, abilityOwner.transform.position.z);
+
+            Vector3 direction = mousePosition - abilityOwner.transform.position;
+
+
+            abilityObject.GetComponent<Rigidbody>().velocity = direction.normalized * spellSpeed;
+            
+
+        } //End CreateAbilityObject(2)
+
+
+
+
     } //End Ability class
 
 
