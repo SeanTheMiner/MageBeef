@@ -126,13 +126,13 @@ namespace Abilities {
                 );
 
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.y = 0;
             
             Vector3 playerPosition = new Vector3(abilityOwner.transform.position.x, 0, abilityOwner.transform.position.z);
 
-            Vector3 direction = mousePosition - abilityOwner.transform.position;
+            Vector3 direction = (mousePosition - abilityOwner.transform.position).normalized;
 
-
-            abilityObject.GetComponent<Rigidbody>().velocity = direction.normalized * spellSpeed;
+            abilityObject.GetComponent<Rigidbody>().velocity = direction * spellSpeed;
             
 
         } //End CreateAbilityObject(2)

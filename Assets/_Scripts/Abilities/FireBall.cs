@@ -17,7 +17,7 @@ public class FireBall : Ability {
         manaCost = 10;
         damage = 10;
 
-        spellSpeed = 10;
+        spellSpeed = 12;
 
     } //End Constructor ()
 
